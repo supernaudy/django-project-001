@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="container py-5">
+	<section class="row card card-body">
+		<div class="col-md-8 offset-md-2">
+			<h1 class="text-center">Pending Tasks</h1>
+			<a class="btn btn-primary mb-3" href="{% url 'create_task' %}">
+				<i class="fa fa-plus"></i> Create
+			</a>
+			<ul class="list-group">
+				{% for task in tasks %}
+				<a class="list-group-item" href="{% url 'task_detail' task.id %}">
+					{% if task.is_important %}
+						<i class="fa fa-star"></i>
+					{% endif %}
+					{{ task.name }}
+				</a>
+				<!-- <a href="{% url 'mark_as_done' task.id%}">Check</a>
+				<a href="{% url 'delete_task' task.id%}">delete</a> -->
+				{% endfor %}
+			</ul>
+		</div>
+	</section>
+</main>
+{% endblock %}
