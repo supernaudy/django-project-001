@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'auth_001',
+    'rest_001',
 ]
 
 MIDDLEWARE = [
@@ -87,16 +89,6 @@ DATABASES = {
         default='postgresql://django:123456789@localhost:5432/djangoproject',
         conn_max_age=600
     )
-    # LOCALHOST CONFIGURATION
-
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': 'djangoproject',
-    #     'USER': 'django',
-    #     'PASSWORD': '123456789',
-    #     'HOST': 'localhost',
-    #     'PORT': '5432',
-    # }
 }
 
 
